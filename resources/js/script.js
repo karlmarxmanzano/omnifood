@@ -27,11 +27,11 @@ $(document).ready(function () {
         }, 1000)
     })
 
-    // Select all links with hashes
+    // // Select all links with hashes
     $('a[href*="#"]')
         // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
+        .not('[href*=\\#]')
+        .not('[href*=\\#0]')
         .click(function(event) {
             // On-page links
             if (
@@ -66,6 +66,8 @@ $(document).ready(function () {
 
     $('.js-wp-1').waypoint(function (direction) {
         $('.js-wp-1').addClass('animated fadeIn')
+    }, {
+        offset: '50%'
     })
     
 
